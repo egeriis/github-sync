@@ -46,8 +46,7 @@ class SyncCommand extends Command
                 'skipDelete',
                 null,
                 InputOption::VALUE_NONE,
-                'Skip delete of labels that do not exist in receiver repos.',
-                false
+                'Skip delete of labels that do not exist in receiver repos.'
             )
         ;
     }
