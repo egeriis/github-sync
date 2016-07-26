@@ -42,6 +42,13 @@ class SyncCommand extends Command
                 InputOption::VALUE_NONE,
                 'Directly update each label and milestone without prompting the user.'
             )
+            ->addOption(
+                'skipDelete',
+                null,
+                InputOption::VALUE_NONE,
+                'Skip delete of labels that do not exist in receiver repos.',
+                false
+            )
         ;
     }
 

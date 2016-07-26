@@ -48,6 +48,11 @@ class LabelSynchronizer extends AbstractSynchronizer
                 }
             })
             ->whenMissingLeft(function ($label) use ($to) {
+                if ($this->input->getOption('skipDelete')) {
+                    $this->output->writeln(sprintf('Skipped label delete <info>%s</info> in %s', $label['name'], $to));
+                    return;
+                }
+
                 $this->output->writeln(sprintf('Extra label <info>%s</info> in %s', $label['name'], $to));
 
                 if ($this->confirm('Do you want to <fg=red>delete</fg=red> this extra label?')) {
